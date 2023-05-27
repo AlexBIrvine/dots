@@ -1,0 +1,50 @@
+#!/usr/bin/env sh
+
+
+# Make sxhkd reload its configuration files
+alt + Escape
+	pkill -USR1 -x sxhkd
+
+# Run Rofi drun
+alt + space ; {space, f, l, j}
+	{rofi -show drun, firefox, wezterm -e lvim, wezterm -e $HOME/Repos/Scripts/journalToday.sh} 
+
+# Window switcher
+alt + Tab
+  bspc desktop -f next.occupied
+  
+# quit or restart bspwm
+alt + shift + {q,r}
+	bspc {quit,wm -r}
+
+# Create a new terminal window or swap the current one to the biggest one in the screen
+alt + {_,shift + }Return
+	{wezterm, bspc node -s biggest.local}
+
+# Close or kill a window
+alt + w
+	bspc node -c
+
+# Change the window state
+alt + {t,ctrl + t,l,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Focus node in given direction
+alt + shift + {h,j,k,l}
+  bspc node -f {west,south,north,east}
+
+# Expand a window by moving one of its side's outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Focus or send a window to the given desktop
+alt + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Alternate between tiled and monocle layout
+alt + m 
+  bspc desktop -l next
+
+# Swap cuttent node and biggest node
+alt + s
+  bspc node -s biggest
