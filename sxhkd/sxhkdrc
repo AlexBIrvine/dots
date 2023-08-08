@@ -6,12 +6,12 @@ alt + Escape
 	pkill -USR1 -x sxhkd
 
 # Run Rofi drun
-alt + space ; {space, f, l, j}
-	{rofi -show drun, firefox, wezterm -e lvim, wezterm -e $HOME/Repos/Scripts/journalToday.sh} 
+alt + space ; {space, f, l, j, e, a}
+	{rofi -show drun, firefox, wezterm -e lvim, wezterm -e $HOME/Repos/Scripts/journalToday.sh, wezterm -e emacs, wezterm -e alsamixer} 
 
 # Window switcher
 alt + Tab
-  bspc desktop -f next.occupied
+  bspc desktop -f last.occupied
   
 # quit or restart bspwm
 alt + shift + {q,r}
