@@ -1,8 +1,0 @@
-require("core.plugin_config.lsp")
-require("core.plugin_config.leap")
-require("core.plugin_config.telescope")
-require("core.plugin_config.hardline")
-require("core.plugin_config.project")
-require("core.plugin_config.term-runner")
-require("core.plugin_config.neotest")
-require("core.plugin_config.formatter")

@@ -98,6 +98,6 @@ lvim.builtin.treesitter.auto_install = true
 
 -- -- Additional Plugins <https://www.lunarvim.org/docs/configuration/plugins/user-plugins>
 lvim.plugins = {
-      { "EdenEast/nightfox.nvim" }, 
-      { 'michaelb/sniprun', build = 'sh ./install.sh'}
+  { "EdenEast/nightfox.nvim" },
+  { 'michaelb/sniprun',      build = 'sh ./install.sh' }
 }

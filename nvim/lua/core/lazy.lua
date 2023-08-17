@@ -12,99 +12,19 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {
-  "tpope/vim-repeat",
-  "ggandor/leap.nvim",
-  "RRethy/vim-illuminate",
-  'ojroques/nvim-hardline',
-  "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-  "ahmedkhalf/project.nvim",
-  "klen/nvim-test",
-  'brenoprata10/nvim-highlight-colors',
-  "elentok/format-on-save.nvim",
-  {
-    "nvim-neotest/neotest",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim"
-    }
-  },
-  {
-    "kdheepak/lazygit.nvim",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-lua/plenary.nvim"
-    },
-    config = function()
-      require("telescope").load_extension("lazygit")
-    end,
-  },
-  {
-    "okuuva/auto-save.nvim",
-    cmd = "ASToggle",                         -- optional for lazy loading on command
-    event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
-    opts = {},
-  },
-  { 'michaelb/sniprun',                run = 'sh ./install.sh' },
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-  {
-    'romgrk/barbar.nvim',
-    dependencies = {
-      'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
-      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-    },
-    init = function() vim.g.barbar_auto_setup = false end,
-    opts = {},
-    version = '^1.0.0', -- optional: only update when a new 1.x version is released
-  },
-  {
-    "EdenEast/nightfox.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme nightfox]])
-    end,
-  },
-  {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.2',
-    dependencies = { 'nvim-lua/plenary.nvim' }
-  },
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {},
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    }
-  },
-  {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    dependencies = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig' },             -- Required
-      { 'williamboman/mason.nvim' },           -- Optional
-      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },     -- Required
-      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' },     -- Required
-    }
-  },
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 100
-    end,
-    opts = {}
-  },
-}
-
 local opts = {}
-require("lazy").setup(plugins, opts)
+require("lazy").setup("plugins", opts)
+
+-- LSP ZERO CONFIG
+local lsp = require('lsp-zero').preset({})
+
+lsp.on_attach(function(client, bufnr)
+  -- see :help lsp-zero-keybindings
+  -- to learn the available actions
+  lsp.default_keymaps({buffer = bufnr})
+end)
+
+-- (Optional) Configure lua language server for neovim
+require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
+lsp.setup()

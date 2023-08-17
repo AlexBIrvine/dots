@@ -27,7 +27,3 @@ vim.opt_local.linebreak = true
 --Line numbers
 vim.opt.relativenumber = true
 vim.opt.number = true
-
-vim.diagnostic.config({
-  virtual_text = false,
-})
