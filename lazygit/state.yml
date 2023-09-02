@@ -1,9 +1,12 @@
 lastupdatecheck: 0
 recentrepos:
-    - /home/alex/.config
-    - /home/alex/Repos/TDD-With-Go
-    - /home/alex/Repos/ObsidianNotes
-    - /home/alex/Repos/6-Pak-AL-Site
+- /home/alex/.config
+- /home/alex/Repos/Portfolio
+- /home/alex/Repos/ObsidianNotes
+- /home/alex/.local/share/nvim/lazy/aerial.nvim
+- /home/alex/Repos/6-Pak-AL-Site
+- /home/alex/Repos/TDD-With-Go
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false
+ignorewhitespaceindiffview: false

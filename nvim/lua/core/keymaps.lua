@@ -32,6 +32,7 @@ map('n', '<leader>fh', "<cmd>Telescope help_tags<cr>", "Help")
 map('n', '<leader>fr', "<cmd>Telescope oldfiles<cr>", "Recent")
 map('n', '<leader>fc', "<cmd>Telescope commands<cr>", "Commands")
 map('n', '<leader>fp', "<cmd>Telescope projects<cr>", "Projects")
+map('n', '<leader>fs', "<cmd>Telescope spell_suggest<cr>", "Spelling")
 map("n", "/",
   function()
     require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({

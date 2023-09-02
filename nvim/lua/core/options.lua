@@ -27,3 +27,7 @@ vim.opt_local.linebreak = true
 --Line numbers
 vim.opt.relativenumber = true
 vim.opt.number = true
+vim.opt.cursorlineopt = {'number', 'line'}
+
+-- line highlighting
+vim.opt.list = true

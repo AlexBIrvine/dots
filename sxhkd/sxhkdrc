@@ -6,8 +6,8 @@ alt + Escape
 	pkill -USR1 -x sxhkd
 
 # Run Rofi drun
-alt + space ; {space, f, l, j, e, a}
-	{rofi -show drun, firefox, wezterm -e lvim, wezterm -e $HOME/Repos/Scripts/journalToday.sh, wezterm -e emacs, wezterm -e alsamixer} 
+alt + space ; {space, f, n, j, e, a}
+	{rofi -show drun, firefox, wezterm -e nvim, wezterm -e $HOME/Repos/Scripts/journalToday.sh, wezterm -e emacs, wezterm -e alsamixer} 
 
 # Window switcher
 alt + Tab
