@@ -154,8 +154,12 @@
         which-key-allow-imprecise-window-fit   t
         which-key-seperator                    " → "))
 
-# (use-package night-owl)
-# (load-theme 'night-owl t)
+; (use-package night-owl)
+ ; (load-theme 'night-owl t)
+(use-package nordic-night-theme
+  :ensure t
+  :config
+  (load-theme 'nordic-night t))
 
 (use-package toc-org
   :commands toc-org-enable

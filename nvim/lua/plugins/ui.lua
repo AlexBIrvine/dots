@@ -109,5 +109,18 @@ return {
         org_default_notes_file = '~/Dropbox/org/refile.org',
       })
     end
+  },
+  {
+    'akinsho/org-bullets.nvim', 
+    config = function()
+      require('org-bullets').setup{
+        symbols = {
+          -- list symbol
+          list = "•",
+          -- headlines can be a list
+          headlines = { "◉", "○", "✸", "✿" }
+        },
+      }
+    end
   }
 }

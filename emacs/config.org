@@ -211,8 +211,12 @@ Adjusts the look of GNU Emacs
 
 * Color Theme
 #+begin_src emacs-lisp
-  # (use-package night-owl)
-  # (load-theme 'night-owl t)
+   ; (use-package night-owl)
+   ; (load-theme 'night-owl t)
+  (use-package nordic-night-theme
+    :ensure t
+    :config
+    (load-theme 'nordic-night t))
 #+end_src
 
 * Org Mode
