@@ -1,1 +1,0 @@
-/home/alex/.config/emacs/elpaca/repos/evil-escape/evil-escape.el

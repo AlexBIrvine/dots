@@ -1,1 +1,0 @@
-/home/alex/.config/emacs/elpaca/repos/night-owl-emacs/night-owl-theme.el

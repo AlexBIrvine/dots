@@ -7,7 +7,7 @@ alt + Escape
 
 # Run Rofi drun
 alt + space ; {space, f, n, j, e, a}
-	{rofi -show drun, firefox, wezterm -e nvim, wezterm -e $HOME/Repos/Scripts/journalToday.sh, wezterm -e emacs, wezterm -e alsamixer} 
+	{rofi -show drun, firefox, wezterm -e nvim, wezterm -e $HOME/Repos/Scripts/journalToday.sh, emacs, wezterm -e alsamixer} 
 
 # Window switcher
 alt + Tab
@@ -26,8 +26,8 @@ alt + w
 	bspc node -c
 
 # Change the window state
-alt + {t,ctrl + t,l,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+alt + {t,ctrl + t,f}
+	bspc node -t {tiled,pseudo_tiled,fullscreen}
 
 # Focus node in given direction
 alt + shift + {h,j,k,l}

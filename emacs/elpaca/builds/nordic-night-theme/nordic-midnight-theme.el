@@ -1,1 +1,0 @@
-/home/alex/.config/emacs/elpaca/repos/nordic-night/nordic-midnight-theme.el
